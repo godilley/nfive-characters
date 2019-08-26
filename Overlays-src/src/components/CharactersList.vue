@@ -1,54 +1,38 @@
 <template>
-	<section class="container-fluid mt-4">
-		<div class="row justify-content-center">
-			<div v-for="character in characters" :key="character.Id" class="col-4 mb-3">
-				<character :character="character" />
-			</div>
-			<div class="col-4 mb-3">
-				<div class="card border-0 bg-transparent text-center pt-5">
-					<div class="card-body">
-						<router-link to="/create" class="text-success" href="#">
-						<span class="fa-stack fa-7x fa-fw">
-							<i class="fas fa-stack-1x fa-square text-white" />
-							<i class="fas fa-stack-1x fa-plus-square" />
-						</span>
-						</router-link>
-					</div>
-				</div>
-			</div>
-		</div>
-
+	<section class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-12">
+                <carousel ref="carousel" :autoplay="false" :items="3">
+                    <div v-for="character in characters" :key="character.Id" class="px-2 mb-3">
+                        <character :character="character" />
+                    </div>
+                </carousel>
+            </div>
+        </div>
 	</section>
 </template>
 
 <script>
     import Vuex from "vuex"
 	import Character from "./Character";
+    import Carousel from 'vue-owl-carousel'
 
     export default {
         name: "CharactersList",
 		components: {
             Character,
+            Carousel,
 		},
-
         computed: {
             ...Vuex.mapGetters([
                 'characters'
             ]),
-            actionCreate() {
-                return this.action === ACTION_CREATE;
-            },
-            actionList() {
-                return this.action === ACTION_LIST;
-            },
             characterCount() {
                 return this.characters.length;
             }
         },
-
         mounted() {
         },
-
         methods: {
             async selectCharacter(id) {
                 await this.$store.dispatch('selectCharacter', id);
@@ -65,5 +49,21 @@
     }
 </script>
 
-<style scoped>
+<style>
+    .owl-nav {
+        display: none;
+    }
+
+    .owl-theme .owl-dots .owl-dot span {
+        width: 15px;
+        height: 15px;
+    }
+
+    .owl-dots {
+        margin-top: 20px;
+    }
+
+    .owl-stage {
+        margin: 0 auto;
+    }
 </style>

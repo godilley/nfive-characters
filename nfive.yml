@@ -30,6 +30,7 @@ client:
   - Overlays/fonts/fa-solid-900.woff
   - Overlays/fonts/fa-solid-900.woff2
   - Overlays/img/background.jpg
+  - Overlays/img/defaultHeader.png
   - Overlays/img/fa-brands-400.svg
   - Overlays/img/fa-regular-400.svg
   - Overlays/img/fa-solid-900.svg

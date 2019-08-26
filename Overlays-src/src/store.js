@@ -39,15 +39,19 @@ export default new Vuex.Store({
 		},
 
 		setCharacters(state, characters) {
-			state.all = []
+			state.all = [];
 
 			for (let i = 0; i < characters.length; i++) {
-				const character = characters[i]
+				const character = characters[i];
 
-				character.GenderString = character.Gender == 0 ? 'Male' : 'Female'
+				character.GenderString = character.Gender === 0 ? 'Male' : 'Female';
 
-				const dob = new Date(character.DateOfBirth)
-				character.DateOfBirthFormatted = dob.getDate() + ' ' + dob.toLocaleString('en-US', { month: 'long' }) + ' ' + dob.getFullYear()
+				const dob = new Date(character.DateOfBirth);
+				character.DateOfBirthFormatted = dob.getDate() + ' ' + dob.toLocaleString('en-US', { month: 'long' }) + ' ' + dob.getFullYear();
+
+				const lastPlayed = new Date(character.LastPlayed);
+				character.LastPlayedFormatted = lastPlayed.getDate() + ' ' + lastPlayed.toLocaleString('en-US', { month: 'long' }) + ' ' + lastPlayed.getFullYear();
+                character.LastPlayedFormatted = character.LastPlayedFormatted + ' @ ' + lastPlayed.getHours() + ':' + lastPlayed.getMinutes();
 
 				state.all.push(character)
 			}
