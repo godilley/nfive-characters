@@ -1,0 +1,9 @@
+/.vs/
+/packages/
+/plugins/
+/Overlays/
+/Overlays-src/node_modules
+/Overlays-src/dist
+/*.dll
+obj/
+*.user

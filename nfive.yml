@@ -1,0 +1,37 @@
+name: IgiCore/characters
+version: 1.0.0
+description: NFive Plugin
+author: IgiCore
+license: LGPL
+server:
+  main:
+  - IgiCore.Characters.Server
+  include:
+  - IgiCore.Characters.Shared
+client:
+  main:
+  - IgiCore.Characters.Client
+  include:
+  - IgiCore.Characters.Shared
+  files:
+  - Overlays/css/app.css
+  - Overlays/css/chunk-vendors.css
+  - Overlays/fonts/fa-brands-400.eot
+  - Overlays/fonts/fa-brands-400.ttf
+  - Overlays/fonts/fa-brands-400.woff
+  - Overlays/fonts/fa-brands-400.woff2
+  - Overlays/fonts/fa-regular-400.eot
+  - Overlays/fonts/fa-regular-400.ttf
+  - Overlays/fonts/fa-regular-400.woff
+  - Overlays/fonts/fa-regular-400.woff2
+  - Overlays/fonts/fa-solid-900.eot
+  - Overlays/fonts/fa-solid-900.ttf
+  - Overlays/fonts/fa-solid-900.woff
+  - Overlays/fonts/fa-solid-900.woff2
+  - Overlays/img/background.jpg
+  - Overlays/img/fa-brands-400.svg
+  - Overlays/img/fa-regular-400.svg
+  - Overlays/img/fa-solid-900.svg
+  - Overlays/CharacterOverlay.html
+  - Overlays/js/app.js
+  - Overlays/js/chunk-vendors.js
