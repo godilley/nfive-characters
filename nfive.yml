@@ -14,6 +14,7 @@ client:
   include:
   - IgiCore.Characters.Shared
   files:
+  - Overlays/CharacterOverlay.html
   - Overlays/css/app.css
   - Overlays/css/chunk-vendors.css
   - Overlays/fonts/fa-brands-400.eot
@@ -32,6 +33,5 @@ client:
   - Overlays/img/fa-brands-400.svg
   - Overlays/img/fa-regular-400.svg
   - Overlays/img/fa-solid-900.svg
-  - Overlays/CharacterOverlay.html
   - Overlays/js/app.js
   - Overlays/js/chunk-vendors.js
